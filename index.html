@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infection Spread Simulation</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .node {
+      stroke: #fff;
+      stroke-width: 1.5px;
+    }
+    .infected {
+      fill: red;
+    }
+    .susceptible {
+      fill: blue;
+    }
+    .recovered {
+      fill: green;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <label>Population Size: <input type="range" id="populationSize" min="50" max="500" value="100"></label>
+    <label>Initial Infected: <input type="range" id="initialInfected" min="1" max="50" value="5"></label>
+    <label>R0 (Infection Rate): <input type="range" id="R0" min="0.5" max="5.0" step="0.1" value="2.0"></label>
+    <label>Recovery Rate: <input type="range" id="recoveryRate" min="0.01" max="1.0" step="0.01" value="0.1"></label>
+    <label>Isolation Rate: <input type="range" id="isolationRate" min="0.0" max="1.0" step="0.01" value="0.5"></label>
+    <label>Vaccination Rate: <input type="range" id="vaccinationRate" min="0.0" max="1.0" step="0.01" value="0.7"></label>
+    <label>Vaccine Efficacy: <input type="range" id="vaccineEfficacy" min="0.5" max="1.0" step="0.01" value="0.9"></label>
+    <label>Days: <input type="range" id="days" min="1" max="20" value="10"></label>
+    <button onclick="startSimulation()">Start Simulation</button>
+  </div>
+
+  <svg width="600" height="600"></svg>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
